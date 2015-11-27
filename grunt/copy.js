@@ -13,7 +13,7 @@ module.exports = {
     ],
   },
 
-  assets: {
+  favicon: {
     files: [
       {
         expand: true,
