@@ -1,0 +1,25 @@
+.button {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+
+    &--default {
+        padding: .4rem 1.rem;
+        border: 1px solid @brand-gray;
+        border-radius: 10px;
+
+        &:hover {
+            background: @brand-gray-light;
+        }
+    }
+
+    &--white {
+        background: #fff;
+
+        &:hover {
+            background: @brand-gray-light;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "skaut",
+  "description": "3. skautský oddíl Kamzíci Doloplazy",
+  "main": "index.js",
+  "authors": [
+    "Mikec"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "normalize-css": "~3.0.3",
+    "picturefill": "~3.0.1"
+  }
+}
