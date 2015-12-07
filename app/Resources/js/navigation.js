@@ -5,6 +5,7 @@ const NAVIGATION_OPEN_CLASS = 'navigation--open';
 const NAVIGATION_VISIBLE_CLASS = 'navigation--visible';
 const NAVIGATION_INVERTED_CLASS = 'navigation--inverted';
 const NAVIGATION_TOGGLE_TOGGLED_CLASS = 'navigation__toggle--toggled';
+const NAVIGATION_TOOGLE_BAR_DELAY = '.2s';
 const NAVIGATION_TOGGLE_BAR_FIRST_CLASS = 'navigation__toggle__bar--first';
 const NAVIGATION_TOGGLE_BAR_THIRD_CLASS = 'navigation__toggle__bar--third';
 const NAVIGATION_LIST_ITEM_CLASS = 'navigation__list__item';
@@ -34,8 +35,8 @@ export default class {
       let navigationToggleBarFirst = this.navigationToggleElement.querySelector(`.${NAVIGATION_TOGGLE_BAR_FIRST_CLASS}`);
       let navigationToggleBarThird = this.navigationToggleElement.querySelector(`.${NAVIGATION_TOGGLE_BAR_THIRD_CLASS}`);
       if (this.isOpen) {
-        common.setVendorProperty(navigationToggleBarFirst, 'transitionDelay', '.2s');
-        common.setVendorProperty(navigationToggleBarThird, 'transitionDelay', '.2s');
+        common.setVendorProperty(navigationToggleBarFirst, 'transitionDelay', NAVIGATION_TOOGLE_BAR_DELAY);
+        common.setVendorProperty(navigationToggleBarThird, 'transitionDelay', NAVIGATION_TOOGLE_BAR_DELAY);
         this.navigationElement.classList.remove(NAVIGATION_OPEN_CLASS);
         this.navigationToggleElement.classList.remove(NAVIGATION_TOGGLE_TOGGLED_CLASS);
         this.isOpen = false;
