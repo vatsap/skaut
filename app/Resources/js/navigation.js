@@ -2,6 +2,7 @@ import * as common from './common';
 
 const NAVIGATION_CLASS = 'navigation';
 const NAVIGATION_OPEN_CLASS = 'navigation--open';
+const NAVIGATION_VISIBLE_CLASS = 'navigation--visible';
 const NAVIGATION_INVERTED_CLASS = 'navigation--inverted';
 const NAVIGATION_TOGGLE_TOGGLED_CLASS = 'navigation__toggle--toggled';
 const NAVIGATION_TOGGLE_BAR_FIRST_CLASS = 'navigation__toggle__bar--first';
@@ -33,19 +34,29 @@ export default class {
       let navigationToggleBarFirst = this.navigationToggleElement.querySelector(`.${NAVIGATION_TOGGLE_BAR_FIRST_CLASS}`);
       let navigationToggleBarThird = this.navigationToggleElement.querySelector(`.${NAVIGATION_TOGGLE_BAR_THIRD_CLASS}`);
       if (this.isOpen) {
-        this.setTransitionDelay(navigationToggleBarFirst, '.2s');
-        this.setTransitionDelay(navigationToggleBarThird, '.2s');
+        common.setVendorProperty(navigationToggleBarFirst, 'transitionDelay', '.2s');
+        common.setVendorProperty(navigationToggleBarThird, 'transitionDelay', '.2s');
         this.navigationElement.classList.remove(NAVIGATION_OPEN_CLASS);
         this.navigationToggleElement.classList.remove(NAVIGATION_TOGGLE_TOGGLED_CLASS);
         this.isOpen = false;
       } else {
-        this.setTransitionDelay(navigationToggleBarFirst, '0s');
-        this.setTransitionDelay(navigationToggleBarThird, '0s');
+        common.setVendorProperty(navigationToggleBarFirst, 'transitionDelay', '0s');
+        common.setVendorProperty(navigationToggleBarThird, 'transitionDelay', '0s');
         this.navigationElement.classList.add(NAVIGATION_OPEN_CLASS);
+        this.navigationElement.classList.add(NAVIGATION_VISIBLE_CLASS);
         this.navigationToggleElement.classList.add(NAVIGATION_TOGGLE_TOGGLED_CLASS);
         this.isOpen = true;
       }
     });
+
+    let transitionEnd = () => {
+      if (!this.isOpen) {
+        this.navigationElement.classList.remove(NAVIGATION_VISIBLE_CLASS);
+      }
+    };
+
+    this.navigationElement.addEventListener('transitionend', transitionEnd);
+    this.navigationElement.addEventListener('webkitTransitionEnd', transitionEnd);
 
     this.initArrowPosition();
     this.navigationArrowElement.getBoundingClientRect();
@@ -58,7 +69,6 @@ export default class {
     this.initArrowHandler(this.headerBrandElement);
 
     this.windowElement.addEventListener('resize', () => {
-
       this.initArrowPosition();
     });
 
@@ -109,20 +119,6 @@ export default class {
     let elementPosition = element.getBoundingClientRect();
     let arrowPosition = elementPosition.left + elementPosition.width / 2;
 
-    this.setTransform(this.navigationArrowElement, `translate(${arrowPosition}px, 0)`);
-  }
-
-  setTransitionDelay(element, delay) {
-    element.style.transitionDelay = delay;
-    element.style.webkitTransitionDelay = delay;
-    element.style.oTransitionDelay = delay;
-    element.style.msTransitionDelay = delay;
-  }
-
-  setTransform(element, transform) {
-    element.style.transform = transform;
-    element.style.webkitTransform = transform;
-    element.style.oTransform = transform;
-    element.style.msTransform = transform;
+    common.setVendorProperty(this.navigationArrowElement, 'transform', `translate3d(${arrowPosition}px, 0, 0)`);
   }
 }

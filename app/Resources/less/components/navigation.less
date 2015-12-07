@@ -6,14 +6,16 @@
     right: 0;
     bottom: 0;
     margin: 0;
-    transform: translate(0, -100%);
-    transition: transform 0.4s ease;
+    transform: translate3d(0, -100%, 0);
+    visibility: hidden;
+    transition: transform .4s ease;
 
     @media (min-width: @screen-tablet) {
         position: static;
         display: block;
         float: right;
         transform: none;
+        visibility: visible;
     }
 
     &__stripe {
@@ -88,7 +90,7 @@
             padding-bottom: 10px;
             font-size: 16px;
             opacity: 0.4;
-            transform: scale(1.2) translate(5%, 5%);
+            transform: scale(1.2) translate3d(5%, 5%, 0);
             transition: transform .5s 0.2s, opacity .5s 0.2s;
             border-bottom: 1px solid fade(#fff, 50%);
             color: #fff;
@@ -127,12 +129,16 @@
     }
 
     &--open {
-        transform: translate(0, 0);
+        transform: translate3d(0, 0, 0);
 
         .navigation__list__item {
             opacity: 1;
             transform: none;
         }
+    }
+
+    &--visible {
+        visibility: visible;
     }
 
     &__search--icon {
@@ -236,15 +242,15 @@
             }
 
             .navigation__toggle__bar--first {
-                transform: translate(0, 0);
+                transform: translate3d(0, 0, 0);
             }
 
             .navigation__toggle__bar--second {
-                transform: translate(0, 0);
+                transform: translate3d(0, 0, 0);
             }
 
             .navigation__toggle__bar--third {
-                transform: translate(0, 0);
+                transform: translate3d(0, 0, 0);
             }
         }
 
@@ -285,15 +291,15 @@
             }
 
             &--first {
-                transform: translate(0, -8px);
+                transform: translate3d(0, -8px, 0);
             }
 
             &--second {
-                transform: translate(0, 0);
+                transform: translate3d(0, 0, 0);
             }
 
             &--third {
-                transform: translate(0, 8px);
+                transform: translate3d(0, 8px, 0);
             }
         }
     }
