@@ -37,8 +37,7 @@ module.exports = {
     'build-css',
     'build-js',
     'build-images',
-    'copy:favicon',
-    'copy:fonts',
+    'copy',
   ],
 
   dev: [

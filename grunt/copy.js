@@ -13,15 +13,4 @@ module.exports = {
     ],
   },
 
-  favicon: {
-    files: [
-      {
-        expand: true,
-        cwd: '<%= paths.src %>/favicon/',
-        src: ['**/*'],
-        dest: '<%= paths.dist %>/',
-      },
-    ],
-  },
-
 };
