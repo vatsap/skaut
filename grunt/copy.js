@@ -19,7 +19,7 @@ module.exports = {
         expand: true,
         cwd: '<%= paths.src %>/favicon/',
         src: ['**/*'],
-        dest: '<%= paths.dist %>/favicon/',
+        dest: '<%= paths.dist %>/',
       },
     ],
   },

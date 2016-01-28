@@ -6,18 +6,20 @@
 /app/cache/*
 /app/logs/*
 /bin
+/var
 /vendor
 
-/web/assets/*
 /web/bundles/*
 /web/content/*
 /web/vendor/*
-/web/favicon/*
 /web/fonts/*
 /web/images/*
 /web/js/*
 /web/css/*
-/web/cache/*
+/web/*.ico
+/web/*.png
+/web/*.xml
+/web/*.json
 
 *.log
 parameters.yml
