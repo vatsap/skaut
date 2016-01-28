@@ -3,10 +3,9 @@
 
 /bower_components
 /node_modules
-/app/cache/*
-/app/logs/*
-/bin
-/var
+/var/cache/*
+/var/logs/*
+/var/sessions/*
 /vendor
 
 /web/bundles/*
