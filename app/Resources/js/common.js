@@ -6,7 +6,7 @@ export const SCREEN_DESKTOP = 1024;
 export const SCREEN_LARGE = 1400;
 
 export function mediaMinWidth(windowElement, screenWidth) {
-  return windowElement.matchMedia(`(min-width: ${screenWidth}px)`);
+  return windowElement.matchMedia(`(min-width: ${screenWidth}px)`).matches;
 }
 
 export function setVendorProperty(element, property, value) {

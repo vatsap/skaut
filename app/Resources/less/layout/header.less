@@ -1,151 +1,162 @@
 .header {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    width: 100%;
-    height: @header-height-phone;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: @brand-blue;
 
-    @media (min-width: @screen-tablet) {
-        position: static;
-        height: auto;
-        background-color: @brand-blue;
-    }
-
-    &--sticky {
-        display: none;
-
-        .navigation__stripe {
-            display: none;
-        }
-
-        @media (min-width: @screen-tablet) {
-            position: fixed;
-            transform: translate(0, -100%);
-            transition: transform 0.2s;
-            display: block;
-            background: linear-gradient(#fff, fade(#fff, 70%));
-            border-bottom: 1px solid lighten(#000, 70%);
-
-            &--visible {
-                transform: translate(0, 0);
-            }
-        }
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 2 * @container-horizontal-offset);
+        max-width: @container-max-width;
+        padding: @container-vertical-offset / 2 @container-horizontal-offset;
     }
 
     &__brand {
-        position: fixed;
-        z-index: 3;
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
 
-        @media (min-width: @screen-tablet) {
-            position: static;
-            display: inline-block;
-        }
+    &__logo {
+        width: 17px;
+        height: 30px;
+        margin-right: .8rem;
+        background: url("../images/logo-white.svg") center center no-repeat;
+        background-size: 17px 30px;
+    }
 
-        &--inverted {
+    &__title {
+        text-transform: uppercase;
+        color: #fff;
 
-            .header__text {
-                color: @brand-gray-dark;
-            }
+        & > div {
 
-            .header__image {
-                background-image: url("../images/logo-dark.svg");
-
-                @media (min-width: @screen-tablet) {
-                    width: 17px;
-                    height: 30px;
-                    background-size: 17px 30px;
-                }
-
-                @media (min-width: @screen-desktop) {
-                    width: 22px;
-                    height: 40px;
-                    background-size: 22px 40px;
-                }
-            }
-
-            .header__subtitle,
-            .header__place {
-                display: none;
+            &:nth-child(1) {
+                font-size: 1.3rem;
             }
         }
     }
 
-    &__image {
-        display: block;
-        float: left;
-        margin-right: 10px;
-        width: 17px;
-        height: 30px;
-        background: transparent url("../images/logo-white.svg") no-repeat center center;
-        background-size: 17px 30px;
+    @media (max-width: @screen-phone-max) {
+        height: @header-height-phone;
 
-        @media (min-width: @screen-tablet) {
-            display: inline-block;
+        &__brand {
+            position: relative;
+            z-index: 1;
+        }
+
+        &__title > div {
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                display: none;
+            }
+        }
+
+        &--sticky {
+            display: none;
+        }
+    }
+
+    @media (min-width: @screen-tablet) {
+
+        &__container {
+            align-items: center;
+        }
+
+        &__logo {
             width: 40px;
             height: 70px;
             background-size: 40px 70px;
         }
 
-        @media (min-width: @screen-desktop) {
+        &__title > div {
+            line-height: 100%;
+
+            &:nth-child(1) {
+                font-size: 1.85rem;
+            }
+
+            &:nth-child(2) {
+                font-size: .85rem;
+            }
+
+            &:nth-child(3) {
+                font-size: 1.35rem;
+            }
+        }
+
+        &--sticky {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            transform: translate3d(0, -100%, 0);
+            transition: transform .2s;
+            will-change: transform;
+
+            .navigation__stripe {
+                display: none;
+            }
+
+            &--visible {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        &--inverted {
+            background: linear-gradient(#fff, fade(#fff, 70%));
+            border-bottom: 1px solid lighten(#000, 70%);
+
+            .header__logo {
+                background-image: url("../images/logo-dark.svg");
+                width: 17px;
+                height: 30px;
+                background-size: 17px 30px;
+            }
+
+            .header__title > div {
+                color: @brand-gray-dark;
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media (min-width: @screen-desktop) {
+
+        &__logo {
             width: 45px;
             height: 80px;
             background-size: 45px 80px;
         }
-    }
 
-    &__text {
-        display: block;
-        float: left;
-        text-transform: uppercase;
-        margin-top: 3px;
-        color: #fff;
+        &__title > div {
 
-        @media (min-width: @screen-tablet) {
-            display: inline-block;
-            float: none;
-        }
-    }
+            &:nth-child(1) {
+                font-size: 2.15rem;
+            }
 
-    &__title {
-        font-size: 18px;
+            &:nth-child(2) {
+                font-size: 1rem;
+            }
 
-        @media (min-width: @screen-tablet) {
-            font-size: 26px;
-            letter-spacing: 0.05em;
-            line-height: 26px;
+            &:nth-child(3) {
+                font-size: 1.57rem;
+            }
         }
 
-        @media (min-width: @screen-desktop) {
-            font-size: 30px;
-            line-height: 30px;
-        }
-    }
+        &--inverted {
 
-    &__subtitle {
-
-        @media (min-width: @screen-tablet) {
-          font-size: 12px;
-          line-height: 12px;
-          letter-spacing: 0.02em;
-        }
-
-        @media (min-width: @screen-desktop) {
-            font-size: 14px;
-            line-height: 16px;
-        }
-    }
-
-    &__place {
-
-        @media (min-width: @screen-tablet) {
-            letter-spacing: 0.03em;
-            font-size: 19px;
-            line-height: 24px;
-        }
-
-        @media (min-width: @screen-desktop) {
-            font-size: 22px;
+            .header__logo {
+                width: 22px;
+                height: 40px;
+                background-size: 22px 40px;
+            }
         }
     }
 }

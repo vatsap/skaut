@@ -1,6 +1,6 @@
 {% extends 'layout/base.html.twig' %}
 
-{% set bodyClass = 'has-navigation' %}
+{% set bodyClass = '' %}
 
 {% block scripts %}
     {{ parent() }}
@@ -8,21 +8,45 @@
 {% endblock %}
 
 {% block sublayout %}
-    <header id="header" role="header" class="header">
-        <div class="navigation__stripe visible--tablet-min">
+    <header id="header" role="banner" class="header">
+        <div class="navigation__stripe">
             <div id="navigation-arrow" class="navigation__arrow"></div>
         </div>
-        <div class="container">
-            <div id="header-brand" class="header__brand navigation__arrow--active">
-                <div class="header__image"></div>
-                <div class="header__text text--center">
-                    <div class="header__title text--semibold">Kamzíci</div>
-                    <div class="header__subtitle text--thin visible--tablet-min">3. skautský oddíl</div>
-                    <div class="header__place text--regular visible--tablet-min">Doloplazy</div>
+        <div class="header__container">
+            <h1 id="header-brand" class="header__brand">
+                <div role="logo" class="header__logo" title="3. skautský oddíl Kamzíci Doloplazy"></div>
+                <div class="header__title">
+                    <div class="text--semibold">Kamzíci</div>
+                    <div class="text--thin">3. skautský oddíl</div>
+                    <div class="text--regular">Doloplazy</div>
                 </div>
-            </div>
-            <div class="navigation__bar visible--phone-max">
-                <div id="navigation-toggle" class="navigation__toggle pull--right">
+            </h1>
+            <nav id="navigation" role="navigation" class="navigation">
+                <ul id="navigation-list" class="navigation__list">
+                    <li class="navigation__item navigation__item--active">
+                        <a class="navigation__link" href="#">O nás</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Akce</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Družiny</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Kontakty</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Ke stažení</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Odkazy</a>
+                    </li>
+                    <li role="search" class="navigation__item">
+                        <input type="text" class="navigation__link navigation__search visible--phone-max" placeholder="Hledat" />
+                        <a href="#" class="navigation__link navigation__search visible--tablet-min"></a>
+                    </li>
+                </ul>
+                <div id="navigation-toggle" class="navigation__toggle">
                     <div class="navigation__toggle__container">
                         <div class="navigation__toggle__top">
                             <span class="navigation__toggle__bar navigation__toggle__bar--first"></span>
@@ -33,37 +57,65 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <nav id="navigation" class="navigation">
-                <div class="navigation__body">
-                    <ul class="navigation__list list--unstyled">
-                        <li class="navigation__list__item navigation__list__item--active">
-                          <a class="navigation__link" href="#">O nás</a>
-                        </li>
-                        <li class="navigation__list__item">
-                          <a class="navigation__link" href="#">Akce</a>
-                        </li>
-                        <li class="navigation__list__item">
-                          <a class="navigation__link" href="#">Družiny</a>
-                        </li>
-                        <li class="navigation__list__item">
-                          <a class="navigation__link" href="#">Kontakty</a>
-                        </li>
-                        <li class="navigation__list__item">
-                          <a class="navigation__link" href="#">Ke stažení</a>
-                        </li>
-                        <li class="navigation__list__item">
-                          <a class="navigation__link" href="#">Odkazy</a>
-                        </li>
-                        <li class="navigation__list__item">
-                            <input type="text" class="navigation__search navigation__search--icon visible--phone-max" placeholder="Hledat" />
-                            <a href="#" class="navigation__search__icon navigation__search--icon visible--tablet-min-inline"></a>
-                        </li>
-                    </ul>
-                </div>
             </nav>
         </div>
     </header>
+    {#
+    <header id="header" role="banner" class="header">
+        <div class="navigation__stripe visible--tablet-min">
+            <div id="navigation-arrow" class="navigation__arrow"></div>
+        </div>
+        <div id="header-brand" class="header__brand navigation__arrow--active">
+            <div class="header__image"></div>
+            <div class="header__text text--center">
+                <div class="header__title text--semibold">Kamzíci</div>
+                <div class="header__subtitle text--thin visible--tablet-min">3. skautský oddíl</div>
+                <div class="header__place text--regular visible--tablet-min">Doloplazy</div>
+            </div>
+        </div>
+        <div class="navigation__bar visible--phone-max">
+            <div id="navigation-toggle" class="navigation__toggle pull--right">
+                <div class="navigation__toggle__container">
+                    <div class="navigation__toggle__top">
+                        <span class="navigation__toggle__bar navigation__toggle__bar--first"></span>
+                        <span class="navigation__toggle__bar navigation__toggle__bar--second"></span>
+                    </div>
+                    <div class="navigation__toggle__bottom">
+                        <span class="navigation__toggle__bar navigation__toggle__bar--third"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav id="navigation" role="navigation" class="navigation">
+            <div class="navigation__body">
+                <ul class="navigation__list list--unstyled">
+                    <li class="navigation__list__item navigation__list__item--active">
+                      <a class="navigation__link" href="#">O nás</a>
+                    </li>
+                    <li class="navigation__list__item">
+                      <a class="navigation__link" href="#">Akce</a>
+                    </li>
+                    <li class="navigation__list__item">
+                      <a class="navigation__link" href="#">Družiny</a>
+                    </li>
+                    <li class="navigation__list__item">
+                      <a class="navigation__link" href="#">Kontakty</a>
+                    </li>
+                    <li class="navigation__list__item">
+                      <a class="navigation__link" href="#">Ke stažení</a>
+                    </li>
+                    <li class="navigation__list__item">
+                      <a class="navigation__link" href="#">Odkazy</a>
+                    </li>
+                    <li class="navigation__list__item">
+                        <input type="text" class="navigation__search navigation__search--icon visible--phone-max" placeholder="Hledat" />
+                        <a href="#" class="navigation__search__icon navigation__search--icon visible--tablet-min-inline"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    #}
 
     <main role="main" class="main">
         <section class="section section--gray-light">
@@ -111,7 +163,7 @@
         </section>
     </main>
 
-    <footer role="footer" class="footer">
+    <footer role="contentinfo" class="footer">
 
     </footer>
 {% endblock %}

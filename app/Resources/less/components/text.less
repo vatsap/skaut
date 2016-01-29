@@ -1,0 +1,42 @@
+// Weight
+.text--regular {
+    font-weight: normal;
+}
+
+.text--semibold {
+    font-family: "latosemibold", "latoregular", "HelveticaNeue", "Helvetica", sans-serif;
+    font-weight: normal;
+}
+
+.text--thin {
+    font-family: "latothin", "latoregular", "HelveticaNeue", "Helvetica", sans-serif;
+    font-weight: normal;
+}
+
+// Alignment
+.text--center {
+    text-align: center;
+}
+
+// Color
+.text--blue {
+    color: @brand-blue;
+}
+
+.text--blue-dark {
+    color: @brand-blue-dark;
+}
+
+.text--yellow {
+    color: @brand-yellow;
+}
+
+// Size
+.text--large {
+    .text--thin();
+    font-size: 1.5rem;
+
+    @media (min-width: @screen-desktop) {
+        font-size: 2rem;
+    }
+}

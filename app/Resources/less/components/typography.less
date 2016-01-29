@@ -5,17 +5,11 @@ html, body {
 }
 
 h1,
-.h1,
 h2,
-.h2,
 h3,
-.h3,
 h4,
-.h4,
 h5,
-.h5,
-h6,
-.h6 {
+h6 {
     color: @brand-darker;
 }
 
@@ -52,41 +46,4 @@ h6 {
 a {
     color: inherit;
     text-decoration: none;
-}
-
-// Weights
-.text--semibold {
-    font-family: "latosemibold", "latoregular", "HelveticaNeue", "Helvetica", sans-serif;
-}
-
-.text--thin {
-    font-family: "latothin", "latoregular", "HelveticaNeue", "Helvetica", sans-serif;
-}
-
-// Positions
-.text--center {
-    text-align: center;
-}
-
-// Colors
-.text--blue {
-    color: @brand-blue;
-}
-
-.text--blue-dark {
-    color: @brand-blue-dark;
-}
-
-.text--yellow {
-    color: @brand-yellow;
-}
-
-// Sizes
-.text--large {
-    .text--thin();
-    font-size: 1.5rem;
-
-    @media (min-width: @screen-desktop) {
-        font-size: 2rem;
-    }
 }
