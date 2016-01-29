@@ -2,9 +2,14 @@
 
 {% set bodyClass = '' %}
 
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/main.min.css') ~ '?v=' ~ version }}" />
+{% endblock %}
+
 {% block scripts %}
     {{ parent() }}
-    <script src="{{ asset('js/main.min.js') }}"></script>
+    <script src="{{ asset('js/main.min.js') ~ '?v=' ~ version }}"></script>
 {% endblock %}
 
 {% block sublayout %}

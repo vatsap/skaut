@@ -1,3 +1,6 @@
+{% if version is not defined %}
+    {% set version = 1 %}
+{% endif %}
 {% if bodyClass is not defined %}
     {% set bodyClass = '' %}
 {% endif %}
@@ -17,9 +20,7 @@
         {% endif %}
     {% endspaceless %}</title>
 
-    {% block styles %}
-        <link rel="stylesheet" href="{{ asset('css/main.min.css') }}" />
-    {% endblock %}
+    {% block styles %}{% endblock %}
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -43,8 +44,7 @@
 
 {% block sublayout %}{% endblock %}
 
-{% block scripts %}
-{% endblock %}
+{% block scripts %}{% endblock %}
 
 </body>
 </html>
