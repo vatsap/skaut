@@ -1,5 +1,6 @@
 import * as common from './common';
 
+const BLOCK_SCROLLING_CLASS = 'block-scrolling';
 const NAVIGATION_OPEN_CLASS = 'navigation--open';
 const NAVIGATION_VISIBLE_CLASS = 'navigation--visible';
 const NAVIGATION_INVERTED_CLASS = 'navigation--inverted';
@@ -11,8 +12,9 @@ const HEADER_STICKY_CLASS = 'header--sticky';
 const HEADER_STICKY_VISIBLE_CLASS = 'header--sticky--visible';
 
 export default class {
-  constructor(headerElement, windowElement) {
+  constructor(headerElement, bodyElement, windowElement) {
     this.headerElement = headerElement;
+    this.bodyElement = bodyElement;
     this.windowElement = windowElement;
     this.headerClonedElement = null;
     this.navigationClonedElement = null;
@@ -31,10 +33,12 @@ export default class {
     this.navigationToggleElement.addEventListener('click', () => {
       if (this.isOpen) {
         this.navigationElement.classList.remove(NAVIGATION_OPEN_CLASS);
+        this.bodyElement.classList.remove(BLOCK_SCROLLING_CLASS);
         this.isOpen = false;
       } else {
         this.navigationElement.classList.add(NAVIGATION_OPEN_CLASS);
         this.navigationElement.classList.add(NAVIGATION_VISIBLE_CLASS);
+        this.bodyElement.classList.add(BLOCK_SCROLLING_CLASS);
         this.isOpen = true;
       }
 

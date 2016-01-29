@@ -3,6 +3,7 @@ import ScrollSpy from './scroll-spy';
 
 new Navigation(
   document.getElementById('header'),
+  document.body,
   window
 );
 
