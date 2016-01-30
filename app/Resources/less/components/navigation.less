@@ -25,16 +25,18 @@
         }
 
         &__list {
+            margin-top: 1rem;
             padding-left: 29px; // 29px = logo width + right offset
             padding-right: calc(~"@{toggle-width} - @{container-horizontal-offset}");
             padding-bottom: @header-height-phone;
+            overflow: hidden;
         }
 
         &__item {
             position: relative;
             opacity: 0;
             border-bottom: 1px solid fade(#fff, 50%);
-            transform: scale(1.5) translate3d(5%, -10%, 0);
+            transform: scale(1.5) translate3d(.8rem, -.4rem, 0);
             transition: transform .4s, opacity .4s;
             will-change: transform;
 
@@ -72,7 +74,8 @@
 
         &__link {
             display: block;
-            padding-top: 20px;
+            margin-top: 10px;
+            padding-top: 10px;
             padding-bottom: 10px;
             font-size: 1.3rem;
         }
