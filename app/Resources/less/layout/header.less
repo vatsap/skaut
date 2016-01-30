@@ -6,11 +6,13 @@
     background-color: @brand-blue;
 
     &__container {
-        display: flex;
-        justify-content: space-between;
         width: calc(100% - 2 * @container-horizontal-offset);
         max-width: @container-max-width;
         padding: @container-vertical-offset / 2 @container-horizontal-offset;
+    }
+
+    &__heading {
+        margin: 0;
     }
 
     &__brand {
@@ -40,11 +42,13 @@
     }
 
     @media (max-width: @screen-phone-max) {
-        height: @header-height-phone;
+        overflow: hidden;
+        max-height: @header-height-phone;
+        transition: max-height 1s;
+        will-change: max-height;
 
-        &__brand {
-            position: relative;
-            z-index: 1;
+        &__heading {
+            display: inline-block;
         }
 
         &__title > div {
@@ -58,11 +62,17 @@
         &--sticky {
             display: none;
         }
+
+        &--has-navigation-open {
+            max-height: 999px;
+        }
     }
 
     @media (min-width: @screen-tablet) {
 
         &__container {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 

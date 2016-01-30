@@ -1,12 +1,11 @@
 import * as common from './common';
 
-const BLOCK_SCROLLING_CLASS = 'block-scrolling';
 const NAVIGATION_OPEN_CLASS = 'navigation--open';
-const NAVIGATION_VISIBLE_CLASS = 'navigation--visible';
 const NAVIGATION_INVERTED_CLASS = 'navigation--inverted';
 const NAVIGATION_LIST_ITEM_CLASS = 'navigation__item';
 const NAVIGATION_LIST_ITEM_ACTIVE_CLASS = 'navigation__item--active';
 const NAVIGATION_ARROW_ANIMATED_CLASS = 'navigation__arrow--animated';
+const HEADER_HAS_NAVIGATION_OPEN_CLASS = 'header--has-navigation-open';
 const HEADER_INVERTED_CLASS = 'header--inverted';
 const HEADER_STICKY_CLASS = 'header--sticky';
 const HEADER_STICKY_VISIBLE_CLASS = 'header--sticky--visible';
@@ -32,27 +31,16 @@ export default class {
 
     this.navigationToggleElement.addEventListener('click', () => {
       if (this.isOpen) {
+        this.headerElement.classList.remove(HEADER_HAS_NAVIGATION_OPEN_CLASS);
         this.navigationElement.classList.remove(NAVIGATION_OPEN_CLASS);
-        this.bodyElement.classList.remove(BLOCK_SCROLLING_CLASS);
         this.isOpen = false;
       } else {
+        this.headerElement.classList.add(HEADER_HAS_NAVIGATION_OPEN_CLASS);
         this.navigationElement.classList.add(NAVIGATION_OPEN_CLASS);
-        this.navigationElement.classList.add(NAVIGATION_VISIBLE_CLASS);
-        this.bodyElement.classList.add(BLOCK_SCROLLING_CLASS);
         this.isOpen = true;
       }
 
     });
-
-    let transitionEnd = (e) => {
-      if (!this.isOpen && e.target === this.navigationListElement) {
-        this.navigationElement.classList.remove(NAVIGATION_VISIBLE_CLASS);
-      }
-
-    };
-
-    this.navigationListElement.addEventListener('transitionend', transitionEnd);
-    this.navigationListElement.addEventListener('webkitTransitionEnd', transitionEnd);
 
     this.initArrowPosition();
     this.navigationArrowElement.getBoundingClientRect();

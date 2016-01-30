@@ -1,4 +1,5 @@
 .navigation {
+    @toggle-width: 1.2 * @header-height-phone;
     @items: 7;
     @item-delay: 500;
     @item-dec: @item-delay / @items;
@@ -24,26 +25,13 @@
         }
 
         &__list {
-            position: absolute;
-            top: @header-height-phone;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            padding-left: calc(~"29px + @{container-horizontal-offset}"); // 29px = logo width + right offset
-            padding-right: 1.2 * @header-height-phone;
+            padding-left: 29px; // 29px = logo width + right offset
+            padding-right: calc(~"@{toggle-width} - @{container-horizontal-offset}");
             padding-bottom: @header-height-phone;
-            overflow-x: hidden;
-            overflow-y: auto;
-            background-color: @brand-blue;
-            transform: translate3d(0, -100%, 0);
-            transition: transform .4s ease .7s;
-            will-change: transform;
-            visibility: hidden;
         }
 
         &__item {
             position: relative;
-            font-size: 1.3rem;
             opacity: 0;
             border-bottom: 1px solid fade(#fff, 50%);
             transform: scale(1.5) translate3d(5%, -10%, 0);
@@ -86,6 +74,7 @@
             display: block;
             padding-top: 20px;
             padding-bottom: 10px;
+            font-size: 1.3rem;
         }
 
         &__search {
@@ -107,16 +96,18 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 1.2 * @header-height-phone;
+            z-index: 1;
+            width: @toggle-width;
             height: @header-height-phone;
             background-color: @brand-yellow;
             overflow: hidden;
+            cursor: pointer;
 
             &__container,
             &__top,
             &__bottom {
                 position: absolute;
-                width: 1.2 * @header-height-phone;
+                width: @toggle-width;
                 height: @header-height-phone;
                 transform: rotate(0);
             }
@@ -128,7 +119,7 @@
 
             &__top,
             &__bottom {
-                transition: transform 0.25s @timing;
+                transition: transform 0.3s @timing;
                 will-change: transform;
             }
 
@@ -144,7 +135,7 @@
                 &--first,
                 &--second,
                 &--third {
-                    transition: transform .2s .2s;
+                    transition: transform .25s .25s;
                     will-change: transform;
                 }
 
@@ -163,11 +154,6 @@
         }
 
         &--open {
-
-            .navigation__list {
-                transform: translate3d(0, 0, 0);
-                transition-delay: 0s;
-            }
 
             .navigation__item {
                 opacity: 1;
@@ -209,10 +195,6 @@
                     transition-delay: 0s;
                 }
             }
-        }
-
-        &--visible .navigation__list {
-            visibility: visible;
         }
     }
 
