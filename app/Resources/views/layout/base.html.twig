@@ -1,5 +1,5 @@
 {% if version is not defined %}
-    {% set version = 9 %}
+    {% set version = 10 %}
 {% endif %}
 {% if bodyClass is not defined %}
     {% set bodyClass = '' %}
@@ -20,7 +20,6 @@
         {% endif %}
     {% endspaceless %}</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,300&subset=latin-ext" rel="stylesheet" type="text/css" />
     {% block styles %}{% endblock %}
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -41,7 +40,7 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body{% if bodyClass is not null %} class="{{ bodyClass }}"{% endif %}>
+<body{% if bodyClass is not empty %} class="{{ bodyClass }}"{% endif %}>
 
 {% block sublayout %}{% endblock %}
 

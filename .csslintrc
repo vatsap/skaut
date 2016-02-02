@@ -1,6 +1,7 @@
 {
   "box-model": false,
   "box-sizing": false,
+  "bulletproof-font-face": false,
   "fallback-colors": false,
   "font-sizes": false,
   "important": false,
