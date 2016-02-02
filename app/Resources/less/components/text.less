@@ -1,16 +1,14 @@
 // Weight
-.text--regular {
+.text--normal {
     font-weight: normal;
 }
 
-.text--semibold {
-    font-family: "latosemibold", "latoregular", "HelveticaNeue", "Helvetica", sans-serif;
-    font-weight: normal;
+.text--bold {
+    font-weight: bold;
 }
 
-.text--thin {
-    font-family: "latothin", "latoregular", "HelveticaNeue", "Helvetica", sans-serif;
-    font-weight: normal;
+.text--light {
+    font-weight: 300;
 }
 
 // Alignment
@@ -18,22 +16,9 @@
     text-align: center;
 }
 
-// Color
-.text--blue {
-    color: @brand-blue;
-}
-
-.text--blue-dark {
-    color: @brand-blue-dark;
-}
-
-.text--yellow {
-    color: @brand-yellow;
-}
-
 // Size
-.text--large {
-    .text--thin();
+.text--lead {
+    .text--light();
     font-size: 1.5rem;
 
     @media (min-width: @screen-desktop) {
