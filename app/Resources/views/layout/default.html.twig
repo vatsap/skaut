@@ -13,23 +13,23 @@
 {% endblock %}
 
 {% block sublayout %}
-    <header id="header" role="banner" class="header">
+    <header id="header" class="header">
         <div class="navigation__stripe">
             <div id="navigation-arrow" class="navigation__arrow"></div>
         </div>
         <div class="header__container">
             <h1 class="header__heading">
                 <a id="header-brand" class="header__brand" href="#">
-                    <div role="logo" class="header__logo" title="3. skautský oddíl Kamzíci Doloplazy"></div>
-                    <div class="header__title">
-                        <div class="text--semibold">Kamzíci</div>
-                        <div class="text--thin">3. skautský oddíl</div>
-                        <div class="text--regular">Doloplazy</div>
-                    </div>
+                    <span class="header__logo" title="3. skautský oddíl Kamzíci Doloplazy"></span>
+                    <span class="header__title">
+                        <span class="text--semibold">Kamzíci</span>
+                        <span class="text--thin">3. skautský oddíl</span>
+                        <span class="text--regular">Doloplazy</span>
+                    </span>
                 </a>
             </h1>
-            </a>
-            <nav id="navigation" role="navigation" class="navigation">
+            <nav id="navigation" class="navigation">
+                <h2 class="sr-only">Hlavní navigace</h2>
                 <ul id="navigation-list" class="navigation__list">
                     <li class="navigation__item navigation__item--active">
                         <a class="navigation__link" href="#">O nás</a>
@@ -49,8 +49,8 @@
                     <li class="navigation__item">
                         <a class="navigation__link" href="#">Odkazy</a>
                     </li>
-                    <li role="search" class="navigation__item">
-                        <input type="text" class="navigation__link navigation__search visible--phone-max" placeholder="Hledat" />
+                    <li class="navigation__item">
+                        <input type="search" class="navigation__link navigation__search visible--phone-max" placeholder="Hledat" />
                         <a href="#" class="navigation__link navigation__search visible--tablet-min"></a>
                     </li>
                 </ul>
@@ -68,75 +68,20 @@
             </nav>
         </div>
     </header>
-    {#
-    <header id="header" role="banner" class="header">
-        <div class="navigation__stripe visible--tablet-min">
-            <div id="navigation-arrow" class="navigation__arrow"></div>
-        </div>
-        <div id="header-brand" class="header__brand navigation__arrow--active">
-            <div class="header__image"></div>
-            <div class="header__text text--center">
-                <div class="header__title text--semibold">Kamzíci</div>
-                <div class="header__subtitle text--thin visible--tablet-min">3. skautský oddíl</div>
-                <div class="header__place text--regular visible--tablet-min">Doloplazy</div>
-            </div>
-        </div>
-        <div class="navigation__bar visible--phone-max">
-            <div id="navigation-toggle" class="navigation__toggle pull--right">
-                <div class="navigation__toggle__container">
-                    <div class="navigation__toggle__top">
-                        <span class="navigation__toggle__bar navigation__toggle__bar--first"></span>
-                        <span class="navigation__toggle__bar navigation__toggle__bar--second"></span>
-                    </div>
-                    <div class="navigation__toggle__bottom">
-                        <span class="navigation__toggle__bar navigation__toggle__bar--third"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav id="navigation" role="navigation" class="navigation">
-            <div class="navigation__body">
-                <ul class="navigation__list list--unstyled">
-                    <li class="navigation__list__item navigation__list__item--active">
-                      <a class="navigation__link" href="#">O nás</a>
-                    </li>
-                    <li class="navigation__list__item">
-                      <a class="navigation__link" href="#">Akce</a>
-                    </li>
-                    <li class="navigation__list__item">
-                      <a class="navigation__link" href="#">Družiny</a>
-                    </li>
-                    <li class="navigation__list__item">
-                      <a class="navigation__link" href="#">Kontakty</a>
-                    </li>
-                    <li class="navigation__list__item">
-                      <a class="navigation__link" href="#">Ke stažení</a>
-                    </li>
-                    <li class="navigation__list__item">
-                      <a class="navigation__link" href="#">Odkazy</a>
-                    </li>
-                    <li class="navigation__list__item">
-                        <input type="text" class="navigation__search navigation__search--icon visible--phone-max" placeholder="Hledat" />
-                        <a href="#" class="navigation__search__icon navigation__search--icon visible--tablet-min-inline"></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    #}
 
-    <main role="main" class="main">
+    <main class="main">
         <section class="section section--gray-light">
             <div class="container">
-                <h1>Vítejte</h1>
+                <h2>Vítejte</h2>
                 <p class="text--large">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-                <a class="button button--default pull--right" href="#">více</a>
+                <a class="button button--default" href="#">více</a>
             </div>
         </section>
         <section class="section">
             <div class="container">
+                <h2>Dummy Content</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
@@ -171,7 +116,9 @@
         </section>
     </main>
 
-    <footer role="contentinfo" class="footer">
-
+    <footer class="footer">
+        <div class="container">
+            Copyright 2016
+        </div>
     </footer>
 {% endblock %}

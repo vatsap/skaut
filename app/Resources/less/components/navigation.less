@@ -1,8 +1,6 @@
 .navigation {
     @toggle-width: 1.2 * @header-height-phone;
-    @items: 7;
-    @item-delay: 500;
-    @item-dec: @item-delay / @items;
+    @item-delay: 50;
 
     &__list {
         list-style: none;
@@ -36,19 +34,19 @@
             position: relative;
             opacity: 0;
             border-bottom: 1px solid fade(#fff, 50%);
-            transform: scale(1.5) translate3d(.8rem, -.4rem, 0);
-            transition: transform .4s, opacity .4s;
+            transform: scale(1.1) translateY(-24px);
+            transition: transform .35s ease-out, opacity .35s ease-out;
             will-change: transform;
 
-            .item-loop (@i, @delay, @dec) when (@i <= @items) {
+            .item-loop (@i, @delay) when (@i <= @navigation-items) {
 
                 &:nth-child(@{i}) {
                     transition-delay: ~"@{delay}ms";
                 }
-                .item-loop(@i + 1, @delay - @dec, @dec);
+                .item-loop(@i + 1, @delay - @item-delay);
             }
 
-            .item-loop(1, @item-delay, @item-dec);
+            .item-loop(1, (@navigation-items - 1) * @item-delay);
 
             &:last-child {
                 border-bottom-color: #fff;
@@ -85,11 +83,15 @@
             border: 0;
             outline: none;
             background-color: transparent;
-            background-position: left 65%;
+            background-position: left 60%;
             background-size: 17px 16px;
 
             &::placeholder {
-              color: fade(#fff, 50%);
+              color: #fff;
+            }
+
+            &:focus::placeholder {
+                color: fade(#fff, 50%);
             }
         }
 
@@ -162,15 +164,15 @@
                 opacity: 1;
                 transform: none;
 
-                .item-loop (@i, @delay, @dec) when (@i > 0) {
+                .item-loop (@i, @delay) when (@i <= @navigation-items) {
 
                     &:nth-child(@{i}) {
                         transition-delay: ~"@{delay}ms";
                     }
-                    .item-loop(@i - 1, @delay - @dec, @dec);
+                    .item-loop(@i + 1, @delay + @item-delay);
                 }
 
-                .item-loop(@items, @item-delay + 150, @item-dec);
+                .item-loop(1, @item-delay);
             }
 
             .navigation__toggle {

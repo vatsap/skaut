@@ -5,6 +5,17 @@
 }
 
 // Visibility
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
 .hidden {
     display: none;
 }
@@ -49,14 +60,4 @@
     @media (min-width: @screen-desktop) {
         display: none;
     }
-}
-
-// Block page scrolling
-.block-scrolling {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
 }
