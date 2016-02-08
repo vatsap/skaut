@@ -19,6 +19,7 @@
 /web/*.png
 /web/*.xml
 /web/*.json
+/web/*.svg
 
 *.log
 parameters.yml
