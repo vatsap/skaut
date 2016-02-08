@@ -8,7 +8,7 @@ module.exports = {
     '<%= paths.dist %>/images',
     '<%= paths.dist %>/js',
     '<%= paths.dist %>/vendor',
-    '<%= paths.dist %>/*.{ico,png,xml,json}',
+    '<%= paths.dist %>/*.{ico,png,xml,json,svg}',
   ],
   temp: '<%= paths.temp %>',
 
