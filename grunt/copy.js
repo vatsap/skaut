@@ -20,8 +20,8 @@ module.exports = {
         cwd: '<%= paths.src %>/favicon/',
         src: ['**/*.{ico,png,xml,json,svg}'],
         dest: '<%= paths.dist %>/',
-      }
-    ]
+      },
+    ],
   },
 
 };
