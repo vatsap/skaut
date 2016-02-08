@@ -13,4 +13,15 @@ module.exports = {
     ],
   },
 
+  favicon: {
+    files: [
+      {
+        expand: true,
+        cwd: '<%= paths.src %>/favicon/',
+        src: ['**/*.{ico,png,xml,json}'],
+        dest: '<%= paths.dist %>/',
+      }
+    ]
+  },
+
 };
