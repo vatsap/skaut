@@ -89,3 +89,5 @@ ExpiresByType image/gif A30000000
 ExpiresByType image/jpeg A30000000
 ExpiresByType image/png A30000000
 ExpiresByType image/x-icon A30000000
+ExpiresByType image/svg+xml A30000000
+ExpiresByType font/x-woff A30000000
