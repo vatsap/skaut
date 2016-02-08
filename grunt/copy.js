@@ -18,7 +18,7 @@ module.exports = {
       {
         expand: true,
         cwd: '<%= paths.src %>/favicon/',
-        src: ['**/*.{ico,png,xml,json}'],
+        src: ['**/*.{ico,png,xml,json,svg}'],
         dest: '<%= paths.dist %>/',
       }
     ]

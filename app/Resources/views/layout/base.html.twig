@@ -1,5 +1,11 @@
-{% if version is not defined %}
-    {% set version = 11 %}
+{% if cssVersion is not defined %}
+    {% set cssVersion = 11 %}
+{% endif %}
+{% if jsVersion is not defined %}
+    {% set jsVersion = 11 %}
+{% endif %}
+{% if faviconVersion is not defined %}
+    {% set faviconVersion = 1 %}
 {% endif %}
 {% if bodyClass is not defined %}
     {% set bodyClass = '' %}
@@ -20,26 +26,29 @@
         {% endif %}
     {% endspaceless %}</title>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png{{ '?v=' ~ faviconVersion }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png{{ '?v=' ~ faviconVersion }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png{{ '?v=' ~ faviconVersion }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png{{ '?v=' ~ faviconVersion }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png{{ '?v=' ~ faviconVersion }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png{{ '?v=' ~ faviconVersion }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png{{ '?v=' ~ faviconVersion }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png{{ '?v=' ~ faviconVersion }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png{{ '?v=' ~ faviconVersion }}">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png{{ '?v=' ~ faviconVersion }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png{{ '?v=' ~ faviconVersion }}" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png{{ '?v=' ~ faviconVersion }}" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png{{ '?v=' ~ faviconVersion }}" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png{{ '?v=' ~ faviconVersion }}" sizes="16x16">
+    <link rel="manifest" href="/manifest.json{{ '?v=' ~ faviconVersion }}">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg{{ '?v=' ~ faviconVersion }}" color="#000000">
+    <link rel="shortcut icon" href="/favicon.ico{{ '?v=' ~ faviconVersion }}">
+    <meta name="msapplication-TileColor" content="#00bdd4">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png{{ '?v=' ~ faviconVersion }}">
     <meta name="theme-color" content="#ffffff">
 
     {% block styles %}
-        <link rel="stylesheet" href="{{ asset('css/main.min.css') ~ '?v=' ~ version }}" />
+        <link rel="stylesheet" href="{{ asset('css/main.min.css') ~ '?v=' ~ cssVersion }}" />
     {% endblock %}
 </head>
 <body{% if bodyClass is not empty %} class="{{ bodyClass }}"{% endif %}>
@@ -47,7 +56,7 @@
 {% block sublayout %}{% endblock %}
 
 {% block scripts %}
-    <script src="{{ asset('js/main.min.js') ~ '?v=' ~ version }}" async defer></script>
+    <script src="{{ asset('js/main.min.js') ~ '?v=' ~ jsVersion }}" async defer></script>
 {% endblock %}
 
 </body>
