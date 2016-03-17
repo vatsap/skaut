@@ -108,6 +108,6 @@ export default class {
     let elementPosition = element.getBoundingClientRect();
     let arrowPosition = elementPosition.left + elementPosition.width / 2;
 
-    common.setVendorProperty(this.navigationArrowElement, 'transform', `translate3d(${arrowPosition}px, 0, 0)`);
+    this.navigationArrowElement.style.transform = `translate3d(${arrowPosition}px, 0, 0)`;
   }
 }
