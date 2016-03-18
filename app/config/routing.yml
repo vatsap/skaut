@@ -1,3 +1,27 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+homepage:
+    path:   /
+    defaults: { _controller: AppBundle:Default:homepage }
+
+troop:
+    path:   /oddil
+    defaults: { _controller: AppBundle:Default:troop }
+
+events:
+    path:   /akce
+    defaults: { _controller: AppBundle:Default:events }
+
+gallery:
+    path:   /galerie
+    defaults: { _controller: AppBundle:Default:gallery }
+
+contacts:
+    path:   /kontakty
+    defaults: { _controller: AppBundle:Default:contacts }
+
+download:
+    path:   /ke-stazeni
+    defaults: { _controller: AppBundle:Default:download }
+
+links:
+    path:   /odkazy
+    defaults: { _controller: AppBundle:Default:links }
