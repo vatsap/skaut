@@ -9,11 +9,16 @@
 
     &__link {
         color: #fff;
+    }
 
-        &,
-        &:hover,
-        &:focus {
-            text-decoration: none;
+    &:not(&--inverted) {
+
+        .navigation__link {
+            &,
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
         }
     }
 
@@ -274,13 +279,8 @@
             }
 
             .navigation__link {
-                padding: 0 13px;
+                padding: 4px 13px;
                 color: @brand-gray-dark;
-
-                &:hover,
-                &:focus {
-                    text-decoration: underline;
-                }
             }
 
             .navigation__search {
@@ -318,7 +318,7 @@
         &--inverted {
 
             .navigation__link {
-                padding: 0 15px;
+                padding: 8px 15px;
             }
         }
     }
