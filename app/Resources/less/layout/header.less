@@ -16,14 +16,18 @@
         display: flex;
         align-items: center;
         margin: 0;
+
+        &,
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
     }
 
     &__logo {
         width: 17px;
         height: 30px;
         margin-right: .8rem;
-        background: url("../images/logo-white.svg") center center no-repeat;
-        background-size: 17px 30px;
     }
 
     &__title {
@@ -44,6 +48,10 @@
         max-height: @header-height-phone;
         transition: max-height .4s cubic-bezier(0.39, 0.58, 0.57, 1);
         will-change: max-height;
+
+        &__container {
+            padding: 5px @container-horizontal-offset;
+        }
 
         &__heading {
             display: inline-block;
@@ -124,10 +132,12 @@
             border-bottom: 1px solid lighten(#000, 70%);
 
             .header__logo {
-                background-image: url("../images/logo-dark.svg");
                 width: 17px;
                 height: 30px;
-                background-size: 17px 30px;
+
+                > g {
+                    fill: @brand-gray-dark;
+                }
             }
 
             .header__title > span {

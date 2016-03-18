@@ -1,0 +1,16 @@
+{% extends 'layout/default.html.twig' %}
+
+{% set title = 'Ke stažení' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h2>Ke stažení</h2>
+        <ul class="list list--unstyled">
+            <li>
+                <a href="{{ asset('files/krojove-oznaceni.pdf' )}}" download="Krojové označení – co a kde našít na skautské košili.pdf"><img src="{{ asset('images/icons/file.svg') }}" class="icon" />Krojové označení – co a kde našít na skautské košili</a>
+            </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

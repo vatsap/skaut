@@ -7,24 +7,24 @@
 {% if faviconVersion is not defined %}
     {% set faviconVersion = 1 %}
 {% endif %}
+{% if title is not defined %}
+    {% set title = '3. skautský oddíl Kamzíci Doloplazy' %}
+{% endif %}
+{% if description is not defined %}
+    {% set description = '' %}
+{% endif %}
 {% if bodyClass is not defined %}
     {% set bodyClass = '' %}
 {% endif %}
 <!DOCTYPE html>
 <html lang="{{ app.request.locale }}">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% spaceless %}
-        {% if app.request.get('_route') == 'homepage' %}
-            3. skautský oddíl Kamzíci Doloplazy
-        {% else %}
-            {% filter striptags|trim %}
-                {% block title %}{% endblock %}
-            {% endfilter %} — 3. skautský oddíl Kamzíci Doloplazy
-        {% endif %}
-    {% endspaceless %}</title>
+    <title>{{ title }}</title>
+
+    <meta name="description" content="{{ description }}">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png{{ '?v=' ~ faviconVersion }}">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png{{ '?v=' ~ faviconVersion }}">
@@ -47,7 +47,7 @@
     <meta name="theme-color" content="#ffffff">
 
     {% block styles %}
-        <link rel="stylesheet" href="{{ asset('css/main.min.css') ~ '?v=' ~ cssVersion }}" />
+        <link rel="stylesheet" href="{{ asset('css/main.min.css') ~ '?v=' ~ cssVersion }}">
     {% endblock %}
 </head>
 <body{% if bodyClass is not empty %} class="{{ bodyClass }}"{% endif %}>
@@ -55,7 +55,7 @@
 {% block sublayout %}{% endblock %}
 
 {% block scripts %}
-    <script src="{{ asset('js/main.min.js') ~ '?v=' ~ jsVersion }}" async defer></script>
+    <script src="{{ asset('js/main.min.js') ~ '?v=' ~ jsVersion }}" defer></script>
 {% endblock %}
 
 </body>

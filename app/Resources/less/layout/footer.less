@@ -1,5 +1,28 @@
 .footer {
-    flex: 1 0 auto;
-    height: 200px;
     background-color: @brand-gray;
+    color: @brand-gray-light;
+
+    &__container {
+        display: flex;
+        height: 100px;
+
+        > div {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            &:last-child {
+                align-items: flex-end;
+            }
+        }
+    }
+
+    &__legal {
+        font-size: .85em;
+    }
+
+    &__social img {
+        margin-left: 1em;
+    }
 }

@@ -9,8 +9,14 @@
         </div>
         <div class="header__container">
             <h1 class="header__heading">
-                <a id="header-brand" class="header__brand" href="#">
-                    <span class="header__logo" title="3. skautský oddíl Kamzíci Doloplazy"></span>
+                <a id="header-brand" class="header__brand" href="{{ path('homepage') }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385.906 682.499" class="header__logo" alt="Logo 3. skautský oddíl Kamzíci Doloplazy">
+                        <g fill="#fff">
+                            <path d="M261.125 200.865s-2.964-.973-6.703-1.686c-3.738-.714-7.004-1.023-7.004-1.023s-5.04-9.765-14.896-38.97c-4.373-12.96-10.188-26.17-14.43-38.28-4.366-12.468-7.787-24.815-7.787-24.815s10.286 14.594 19.235 26.317c7.437 9.74 15.44 16.29 21.624 29.643 5.098 11.015 7.81 27.185 7.81 34.136 0 6.95 2.15 14.675 2.15 14.675z"/>
+                            <path d="M197.38 211.473s4.008 7.476 10.508 10.913c8.225 4.345 17.59 3.314 24.87-.834 7.852-4.48 7.233-10.865 7.233-10.865s-7.792-21.776-15.823-43.09c-6.165-16.344-13.007-33.785-16.29-43.964-4.542-14.106-10.34-30.508-13.324-46.942-1.98-10.895-2.528-21.808.18-32.075 6.794-25.747 20.517-27.693 31.202-27.11 10.677.582 21.37 7.048 24.334 8.697 4.283 2.387 13.966 7.957 13.966 7.957s-9.023-13.17-19.195-21.048c-10.162-7.88-36.174-20.467-60.218-7.55-8.466 4.548-14.195 10.823-18.37 19.346-7.683 15.682-8.62 38.974-4.055 73.114 2.81 21.007 11.332 42.984 17.53 61.837a3274.836 3274.836 0 0 0 17.452 51.613zM173.848 214.486s.232 5.835-2.456 10.034c-4.096 6.398-11.914 9.176-18.613 8.972-5.873-.187-11.644-2.687-11.644-2.687s-22.053-33.104-41.066-72.073c-11.658-23.894-21.3-51.14-25.836-74.484-3.54-18.21-1.438-37.304 1.913-49.198C79.833 21.978 87.313 12.698 96.292 7.6c7.362-4.178 17.033-3.506 25.136.757 8.588 4.516 16.736 13.063 22.294 23.75 6.083 11.69 7.993 22.64 7.993 22.64s-6.702-7.678-14.247-13.76c-7.97-6.426-16.977-11.923-24.225-9.305-6.637 2.398-10.855 10.107-12.517 19.766-1.873 10.877-.57 24.224 2.964 35.235 8.392 26.15 22.75 51.67 35.703 72.926 12.954 21.254 34.455 54.876 34.455 54.876zM261.246 297.61c-2.654 9.807-13.82 15.365-24.92 12.413-11.11-2.97-17.958-13.308-15.303-23.13 2.654-9.797 13.812-15.358 24.93-12.402 11.1 2.964 17.956 13.314 15.293 23.12z"/>
+                            <path d="M385.63 125.843c-1.685-22.364-18.42-46.022-18.42-46.022s-5.353 34.743-15.94 54.35c-6.49 12.025-20.383 23.642-33.187 35.833-8.07 7.688-15.286 14.35-19.072 23.337-7.973 18.943-4.25 32.942-4.25 32.942s-12.738-8.27-25.36-12.676c-12.633-4.406-19.293-4.756-19.293-4.756s.252 1.344-.188 3.42c-1.052 5.038-4.758 14.4-17.706 19.48-11.792 4.633-28.78 1.677-36.602-6.486-6-6.266-8.637-14.904-8.637-14.904s-.426-.272-2.133.142c-1.327.323-1.763.67-1.763.67s2.263 9.076-2.38 17.37c-4.963 8.866-15.494 13.965-27.01 14.714-6.55.423-11.764-1.14-14.89-2.387-1.557-.62-3.043-2.158-3.043-2.158s-9.634 19.855-13.34 25.44c-1.758 2.656-15.672 16.85-30.2 32.2-16.062 16.966-32.977 35.27-37.38 39.223-3.51 3.153-10.46 6.866-20.252 11.876-7.586 3.878-17.05 6.606-22.798 10.924-5.856 4.397-8.654 7.784-10.758 16.272-2.637 10.636.284 18.494 3.272 24.813 1.295 2.735 4.565 7.646 7.416 11.425 3.86 5.123 7.29 8.723 7.29 8.723s-.88 11.402 4.022 17.07c4.903 5.67 10.843 7.176 19.187 8.08 7.965.853 13.6 1.945 24.7 1.286 13.57-.808 28.994-2.728 38.147-4.244 14.61-2.41 56.65-5.66 56.65-5.66s-24.197 17.412-59.655 69.68C66.6 558.09 47.14 615.425 47.14 615.425c-7.323 39.01 83.666 70.512 118.413 66.773 36.765-3.957 94.23-51.756 127.473-68.053 35.702-17.51 64.06-29.283 64.06-29.283s.073-23.024.652-27.13c1.31-9.35 6.728-41.58 2.483-62.064-4.25-20.482-19.528-37.503-19.707-57.49-.17-19.976 12.386-78.254 7.972-105.1-4.414-26.842-15.154-46.33-15.154-46.33s3.078-4.716 6.402-12.192c3.32-7.468 5.757-14.284 9.152-20.425 3.39-6.142 12.233-19.627 19.352-34.452 7.108-14.823 7.908-24.07 10.26-34.99 2.346-10.922 8.813-36.48 7.135-58.845zM73.575 429.765c-2.532.855-9.858 3.77-17.224 5.14-7.847 1.456-15.74 1.49-17.89 1.352-4.168-.26-7.532-2.412-8.574-5.018-1.042-2.608.496-3.91 1.017-5.474.29-.872.245-4.13-.065-8.07-.248-3.16-.708-5.986-.985-8.062-.708-5.343-3.685-7.094-6.576-10.326-4.95-5.547-10.75-10.156-11.748-19.253-.734-6.68 1.966-11.49 3.08-12.86 1.116-1.375 3.193-3.07 5.54-1.766 2.345 1.3 5.02 6.815 10.493 8.118 5.473 1.304 12.77-3.2 20.85-6.33 8.078-3.126 16.156-1.863 20.326 3.87 4.17 5.733 1.823 16.256-1.825 19.904-3.648 3.648-10.92 4.462-16.678 5.04-8.597.872-12.158 3.006-14.142 4.807-2.305 2.09-3.84 5.022-4.36 9.453-.206 1.71-.327 4.626-.344 7.68-.023 4.854.226 8.65.865 9.928 1.042 2.086 9.902 3.03 20.848 1.728 5.474-.65 12.196-2.085 17.397-3.258 6.017-1.36 28.735-12.16 28.735-12.16s-21.676 13.176-28.74 15.555zM267.347 314.5c-9.48 25.354-16.915 30.674-20.776 34.347-6.995 6.636-21.09 8.942-29.944 9.12-8.852.172-16.85-3.558-20.684-3.232-8.844.75-14.272 5.343-25.177 12.917-12.51 8.682-39.686 22.672-43.66 25.327-4.772 3.192-10.24 4.56-12.44 3.967-2.195-.596-9.83-10.36-9.76-22.022.07-11.67 1.474-17.885 11.833-26.916 10.367-9.04 30.528-19.93 47.573-27.23 9.883-4.225 22.87-6.466 26.383-7.337 4.452-1.107 6.035-5.725 7.643-8.413 2.14-3.576 6.31-14.09 10.316-22.168 2.387-4.812 7.118-12.143 13.984-17.542 5.693-4.47 16.36-8.788 27.062-6.303 9.724 2.264 19.668 7.622 22.356 15.01 2.785 7.637 2.957 19.96-4.707 40.474z"/>
+                        </g>
+                    </svg>
                     <span class="header__title">
                         <span>Kamzíci</span>
                         <span class="text--light">3. skautský oddíl</span>
@@ -21,23 +27,23 @@
             <nav id="navigation" class="navigation">
                 <h2 class="sr-only">Hlavní navigace</h2>
                 <ul id="navigation-list" class="navigation__list">
-                    <li class="navigation__item navigation__item--active">
-                        <a class="navigation__link" href="#">O nás</a>
+                    <li class="navigation__item{{ app.request.get('_route') == 'troop' ? ' navigation__item--active' }}">
+                        <a class="navigation__link" href="{{ path('troop') }}">Oddíl</a>
                     </li>
-                    <li class="navigation__item">
-                        <a class="navigation__link" href="#">Akce</a>
+                    <li class="navigation__item{{ app.request.get('_route') == 'events' ? ' navigation__item--active' }}">
+                        <a class="navigation__link" href="{{ path('events') }}">Akce</a>
                     </li>
-                    <li class="navigation__item">
-                        <a class="navigation__link" href="#">Družiny</a>
+                    <li class="navigation__item{{ app.request.get('_route') == 'gallery' ? ' navigation__item--active' }}">
+                        <a class="navigation__link" href="{{ path('gallery') }}">Galerie</a>
                     </li>
-                    <li class="navigation__item">
-                        <a class="navigation__link" href="#">Kontakty</a>
+                    <li class="navigation__item{{ app.request.get('_route') == 'contacts' ? ' navigation__item--active' }}">
+                        <a class="navigation__link" href="{{ path('contacts') }}">Kontakty</a>
                     </li>
-                    <li class="navigation__item">
-                        <a class="navigation__link" href="#">Ke stažení</a>
+                    <li class="navigation__item{{ app.request.get('_route') == 'download' ? ' navigation__item--active' }}">
+                        <a class="navigation__link" href="{{ path('download') }}">Ke stažení</a>
                     </li>
-                    <li class="navigation__item">
-                        <a class="navigation__link" href="#">Odkazy</a>
+                    <li class="navigation__item{{ app.request.get('_route') == 'links' ? ' navigation__item--active' }}">
+                        <a class="navigation__link" href="{{ path('links') }}">Odkazy</a>
                     </li>
                     <li class="navigation__item">
                         <input type="search" class="navigation__link navigation__search visible--phone-max" placeholder="Hledat" />
@@ -60,55 +66,20 @@
     </header>
 
     <main class="main">
-        <section class="section section--gray-light">
-            <div class="container">
-                <h2>Vítejte</h2>
-                <p class="text--lead">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <a class="button button--default" href="#">více</a>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-                <h2>Dummy Content</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-        </section>
+        {% block content %}{% endblock %}
     </main>
 
     <footer class="footer">
-        <div class="container">
-            Copyright 2016
+        <div class="container footer__container">
+                <div>
+                    <div class="footer__legal text--light">Copyright &copy; 2015–{{ 'now'|date('Y') }} <br class="visible--phone-max" /><a href="https://michael.cenker.cz">Mikec&reg; Webdesign</a></div>
+                </div>
+                <div>
+                    <div class="footer__social">
+                        <a href="https://www.youtube.com/channel/UC7PiX-6KwQerr84prRLDoJw"><img src="{{ asset('images/icons/youtube.svg') }}" width="60" height="25" alt="3. skautský oddíl Kamzíci Doloplazy na YouTube" /></a>
+                        <a href="https://www.facebook.com/Skautský-odd%C3%ADl-Kamz%C3%ADci-Doloplazy-1416798338634589/"><img src="{{ asset('images/icons/facebook.svg') }}" width="25" height="25" alt="3. skautský oddíl Kamzíci Doloplazy na Facebooku" /></a>
+                    </div>
+                </div>
         </div>
     </footer>
 {% endblock %}
